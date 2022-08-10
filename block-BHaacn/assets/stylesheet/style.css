@@ -1,0 +1,661 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/** custom css **/
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+input, button, textarea {
+    box-shadow: none;
+    outline: 0;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*variables*/
+:root {
+    --primary: rgb(34, 52, 123);
+    --accent: rgb(249, 35, 77);
+    --textDark: rgb(1, 18, 45);
+    --textLight: rgb(95, 94, 101);
+    --textWhite: rgb(255, 255, 255);
+    --bg: rgb(223, 236, 255);
+}
+
+/** Genral **/
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.5;
+    color: var(--textLight);
+    font-size: 1.4rem;
+}
+
+
+
+.container {
+    max-width: 1380px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.padding {
+    padding: 5rem 0;
+}
+
+/*flex*/
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.item-start {
+    align-items: flex-start;
+}
+
+.item-stretch {
+    align-items: stretch;
+}
+
+.item-center {
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+/*****/
+
+.flex-15 {
+    flex: 0 1 15%;
+}
+
+.flex-20 {
+    flex: 0 1 20%;
+}
+
+.flex-25 {
+    flex: 0 1 25%;
+}
+
+
+.flex-30 {
+    flex: 0 1 30%;
+}
+
+.flex-48 {
+    flex: 0 1 48%;
+}
+
+.flex-50 {
+    flex: 0 1 50%;
+}
+
+.flex-60 {
+    flex: 0 1 60%;
+}
+
+
+.grow {
+
+    flex: 1 1 auto;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*button*/
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    background-color: var(--accent);
+    color: #ffffff;
+    border-radius: 4px;
+    transition: all 200ms ease-in-out;
+}
+
+.btn:hover {
+    box-shadow: 0 2px 6 px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+    color: #ffffff !important;
+}
+
+/*text*/
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.text-primary {
+    color: var(--accent);
+}
+
+.font-0 {
+    font-size: 0;
+}
+
+.width-full {
+    width: 100%;
+}
+
+/**heading**/
+
+.heading {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--textDark);
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+
+.heading-secondary {
+    font-size: 2.2rem;
+    color: var(--textDark);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/**navbar**/
+.navbar {
+    padding: 1rem 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background: linear-gradient(rgba(35, 52, 123, 0.7), rgba(35, 52, 123, 0.7)) */
+}
+
+.brand {
+    font-size: 2.5rem;
+    color: var(--textWhite);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav a {
+    color: var(--textWhite);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav a :hover {
+    color: var(--accent);
+}
+
+.navbar .btn {
+    margin-top: 0;
+    text-transform: capitalize;
+}
+
+#toggle, .bars {
+    display: none;
+}
+
+/*hero*/
+
+.hero {
+    background: linear-gradient(rgba(35, 52, 123, 0.7), rgba(35, 52, 123, 0.7)), url(../media/banner.png) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: var(--textWhite);
+}
+
+.hero-heading {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    color: var(--textWhite);
+}
+
+/**join**/
+.join {
+    background-color: var(--bg);
+}
+
+.join-item {
+    border: 2px dashed var(--accent);
+    padding: 1.5rem;
+    position: relative;
+}
+
+.pointer {
+    position: absolute;
+    top: -2rem;
+    left: 1.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--bg);
+    color: var(--accent);
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+/*schedule*/
+.schedule-item {
+    margin-top: 4rem;
+}
+
+.schedule-date {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 2px dashed var(--accent);
+    position: relative;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--accent);
+}
+
+.schedule-date::before {
+    content: "";
+    height: 4rem;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    border-right: 2px dashed var(--accent);
+}
+
+.last-item .schedule-date::before {
+    display: none;
+}
+
+.schedule-date.active {
+    background-color: var(--accent);
+    color: var(--textWhite);
+}
+
+.schedule img {
+    border-radius: 6px;
+}
+
+/*info*/
+
+.info {
+    background-color: var(--bg);
+    color: var(--textDark);
+}
+
+.info-item {
+    padding: 1.6rem 2rem;
+    border-radius: 6px;
+}
+
+.info-item.active {
+    background-color: var(--accent);
+    color: var(--textWhite);
+}
+
+.info-item.active h3 {
+    color: var(--textWhite);
+}
+
+.info-item h3 {
+    font-weight: 900;
+}
+
+.info-item h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+/*cover*/
+.iframe-container {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+
+.cover iframe {
+    border-radius: 12px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*news*/
+
+.news {
+    background-color: var(--bg);
+}
+
+.news h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--textDark);
+    margin: 1rem 0;
+}
+
+.read {
+    font-size: 1.5rem;
+    display: inline-block;
+    text-decoration: underline;
+    color: var(--textDark);
+    margin-top: 2rem;
+}
+
+.read.active {
+    color: var(--accent);
+}
+
+/*footer*/
+.footer h4 {
+    color: var(--textWhite);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.footer a {
+    margin-right: 1rem;
+    color: #bcc0d2;
+}
+
+.bg {
+    background-color: #23347b;
+}
+
+.bg-dark {
+    background-color: #102169;
+    padding: 2rem;
+    color: rgb(190, 191, 194);
+}
+
+
+/**media Quries**/
+
+
+
+
+@media screen and (max-width:1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+}
+
+@media screen and (max-width:992px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        max-width: 960px;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    html {
+        font-size: 12px;
+    }
+
+    .container {
+        max-width: 720px;
+    }
+
+    .sm-column {
+        flex-direction: column;
+    }
+
+    .sm-flex {
+        display: flex;
+    }
+
+    .sm-flex-100 {
+        flex: 0 1 100%;
+        margin: 2rem 0;
+    }
+
+    .sm-wrap {
+        flex-wrap: wrap;
+    }
+
+    .sm-width-full {
+        width: 100%;
+    }
+
+    .order-1 {
+        order: 1;
+    }
+
+    .sm-text-center {
+        text-align: center;
+    }
+
+    .sm-justify-center {
+        justify-content: center;
+    }
+
+    .sm-justify-between {
+        justify-content: space-between;
+    }
+
+    .sm-item-center {
+        align-items: center;
+    }
+
+    /**navbar**/
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 80px;
+        position: fixed;
+        z-index: 999;
+    }
+
+    .nav {
+        display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100vh;
+        padding-top: 12rem;
+        background-color: rgba(35, 52, 123, 0.9);
+    }
+
+    .nav-item {
+        margin: 1.2rem 0;
+    }
+
+    #toggle:checked~.nav {
+        display: inline-block;
+    }
+
+    .bars {
+        display: inline-block;
+        font-size: 2rem;
+        color: var(--textWhite);
+        right: 2rem;
+    }
+
+    .brand, .bars {
+        position: fixed;
+        top: 1.5rem;
+        z-index: 99;
+    }
+
+    .brand {
+        left: 2rem;
+    }
+
+    /**hero**/
+    .hero {
+        height: auto;
+        padding: 8rem 0 6rem 0;
+    }
+
+    .hero img {
+        max-height: 500px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-top-left-radius: 4rem;
+        border-bottom-right-radius: 4rem;
+    }
+
+    /**schedule**/
+    .schedule-item {
+        border-radius: 6px;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+        padding: 0 2rem;
+    }
+
+    .schedule-date {
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        border: 0;
+    }
+
+    .schedule-date.active {
+        background-color: transparent;
+        color: var(--accent);
+    }
+
+    .schedule-date::before {
+        display: none;
+    }
+
+    .schedule-item img {
+        max-height: 240px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    /*info*/
+    .info-item .heading-secondary {
+        margin-bottom: 0;
+    }
+
+    /*news*/
+    .news img {
+        max-height: 280px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    /**footer**/
+    .footer a {
+        margin: 0 0.7rem;
+    }
+}
+
+@media screen and (max-width:576px) {
+    html {
+        font-size: 10px;
+    }
+
+    .container {
+        max-width: 540px;
+    }
+
+}
